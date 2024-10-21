@@ -256,6 +256,48 @@ Ihre Alexandra Pichl
     </div>
 </section>
 	
+<section id="impressum" style="display: none; padding: 20px; border-radius: 8px;">
+    <h2>Impressum</h2>
+    <p><strong>Fraktion BÜNDNIS 90/DIE GRÜNEN Kleinmachnow</strong></p>
+
+    <p><strong>Vertretungsberechtigte:</strong> Alexandra Pichl</p>
+
+    <h3>Ansprechpartner, Postanschrift:</h3>
+    <p>
+        <strong>Alexandra Pichl („V.i.S.d.P.“)</strong><br>
+        c/o BÜNDNIS 90/DIE GRÜNEN Brandenburg<br>
+        Jägerstraße 18<br>
+        14676 Potsdam<br>
+        <a href="mailto:ap@gruene-kleinmachnow.de">ap@gruene-kleinmachnow.de</a><br>
+        Tel.: 0331/979 31 0
+    </p>
+
+    <p>Das Internetangebot <a href="ap@gruene-kleinmachnow.de">ap@gruene-kleinmachnow.de</a> sind Teledienste im Sinne des Staatsvertrages für Rundfunk und Telemedien vom 21.03.2007. Sie werden von der Fraktion BÜNDNIS 90/DIE GRÜNEN Kleinmachnow der Partei BÜNDNIS 90/DIE GRÜNEN in eigener Verantwortung unterhalten und gepflegt. Das Angebot möchte über die politischen Aktivitäten, Diskussionen und Ziele der Bürgermeisterkandidatin Alexandra Pichl, der Kandidatin der Partei BÜNDNIS 90/DIE GRÜNEN informieren. Darüber hinaus sind auch überregionale Informationen zu Themen abrufbar, die bei BÜNDNIS 90/DIE GRÜNEN (Kreis-, Landes- und Bundesverband) oder im Umfeld diskutiert werden.</p>
+
+    <h3>Verantwortlich im Sinne des Telemediengesetzes:</h3>
+    <p>Alexandra Pichl</p>
+
+    <h3>Haftungsausschluss</h3>
+    <p>Die Internetpräsenz der Fraktion BÜNDNIS 90/DIE GRÜNEN Kleinmachnow beinhaltet Links zu Seiten Dritter, die thematisch mit ihr verwandt sind. Wir übernehmen ausschließlich die inhaltliche Verantwortung für die Domain <a href="http://gruene-fraktion-kleinmachnow.de">gruene-fraktion-kleinmachnow.de</a>. Die Verantwortung für Inhalte externer Links übernehmen ausschließlich deren Anbieter. Wir machen uns die Inhalte dieser Seiten nicht zu eigen und haben weder auf deren Inhalt noch auf den Wartungszustand dieser Seiten Einfluss.</p>
+
+    <h3>Persönliche Daten</h3>
+    <p>Wir wissen, dass Sie dem Thema Datenschutz große Bedeutung beimessen. Deshalb ist uns der Schutz Ihrer persönlichen Daten ein wichtiges Anliegen. Persönliche Daten werden beim Besuch unserer Website nur zum Zwecke der Informationsverarbeitung und aufgrund gesetzlicher Bestimmungen gespeichert. Diese Daten werden von uns nicht an Dritte weitergegeben, es sei denn, wir sind gesetzlich dazu verpflichtet oder es erfolgt aufgrund einer gerichtlichen Anordnung.</p>
+    <p>Persönliche Daten, die Sie uns elektronisch übermitteln, z.B. Name, Postanschrift, E-Mail-Adresse oder andere persönliche Angaben, werden nur für den angegebenen Zweck verwendet und sicher verwahrt. Diese Daten werden nicht an Dritte weitergegeben. Informationen senden wir Ihnen nur, wenn Sie sich explizit dafür angemeldet oder uns beauftragt haben.</p>
+
+    <h3>Widerrufsrecht</h3>
+    <p>Sie haben jederzeit das Recht auf Widerruf. Bitte senden Sie eine Mail an <a href="mailto:ap@gruene-kleinmachnow.de">ap@gruene-kleinmachnow.de</a>. Wir werden die Löschung Ihrer Daten umgehend veranlassen.</p>
+
+    <h3>Links zu anderen Websites</h3>
+    <p>Auf unseren Seiten finden Sie Links zu anderen Websites. Für alle diese Links gilt, dass wir keinerlei Einfluss auf die Gestaltung und Inhalte der verlinkten Seiten haben. Daher übernehmen wir keine Verantwortung für deren Inhalt, Gestaltung oder Datenschutzbestimmungen.</p>
+
+    <h3>Verwendung von Cookies</h3>
+    <p>Cookies sammeln Informationen, um eine Website an Ihre Bedürfnisse anzupassen. Sie sind kleine Dateien, die eine Website an Ihren Browser sendet, um sie auf Ihrem System zu speichern. Wir behalten uns die Nutzung temporärer Cookies vor, um Sie effektiver zu unterstützen, wenn Sie unsere Website erneut besuchen, oder um Formulare vor Missbrauch und Spam zu schützen. Sie können Ihren Browser so einstellen, dass Sie informiert werden, wenn ein Cookie gesendet wird. So können Sie selbst entscheiden, ob Sie dieses akzeptieren möchten.</p>
+
+    <p>Informieren Sie sich bitte beim jeweiligen Browser-Anbieter über die Anpassung Ihrer Datenschutzeinstellungen.</p>
+</section>
+
+
+
 <footer class="wrapper style1 align-center">
     <div class="inner">
         <ul class="icons">
@@ -266,12 +308,25 @@ Ihre Alexandra Pichl
             
         </ul>
         <p>Alexandra Pichl &copy; 2024 <span class="footerspacer icon fa-diamond"></span>
-        <a href="./impressum/">Impressum</a>
+        <a href="javascript:void(0);" id="impressum-link">Impressum</a>
         <span class="footerspacer icon fa-diamond"></span>
         Template <a target="_blank" href="https://github.com/caressofsteel/">Hugo Story</a> &copy; 2020
         </p>
     </div>
 </footer>
+
+<script>
+    document.getElementById("impressum-link").addEventListener("click", function() {
+        var impressumSection = document.getElementById("impressum");
+        if (impressumSection.style.display === "none" || impressumSection.style.display === "") {
+            impressumSection.style.display = "block";  
+        } else {
+            impressumSection.style.display = "none";   
+        }
+    });
+</script>
+
+
 
 
 
