@@ -1,0 +1,103 @@
+\documentclass[tikz]{standalone}
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections}
+
+% Custom color scheme
+\definecolor{primary}{HTML}{1D3D59}     % Primary: #1D3D59
+\definecolor{secondary}{HTML}{518C27}   % Secondary: #518C27
+\definecolor{darkest}{HTML}{022601}     % Darkest: #022601
+\definecolor{lightest}{HTML}{8FBF60}    % Lightest: #8FBF60
+\definecolor{highlight}{HTML}{CF2363}   % Special highlight: #CF2363
+
+% Legacy color definitions (kept for compatibility)
+\definecolor{pink2}{RGB}{131,28,71}
+\definecolor{appleedgecolor2}{rgb}{0.4, 0.8, 0.0}
+\definecolor{nodecolor}{HTML}{1D3D59}      % Updated to primary
+\definecolor{edgecolor}{HTML}{518C27}       % Updated to secondary
+\definecolor{edgecolor2}{HTML}{8FBF60}      % Updated to lightest
+\definecolor{brown}{HTML}{022601}       % Updated to darkest
+\definecolor{bluesublime}{RGB}{33,219,242}
+\definecolor{seaedgecolor}{RGB}{27,154,170}
+\definecolor{pink}{RGB}{237,16,118}
+\definecolor{appleedgecolor}{rgb}{0.55, 0.71, 0.0}
+\definecolor{celestialblue}{RGB}{62,146,204}
+\definecolor{lila}{RGB}{152,41,221}
+\definecolor{gold}{RGB}{221,188,41}%opposite of lila
+
+\colorlet{nodecolor}{white}
+\colorlet{fadeoutnodecolor}{white!70}
+\colorlet{edgecolor}{primary}
+\colorlet{fadeoutedgecolor}{primary!70}
+\colorlet{circlecolor}{secondary}
+
+% Define page background color
+\pagecolor{highlight}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+  % Much larger clipping area for more zoom out
+  \clip(-8,-5) rectangle (8,5);
+  % ellipse
+  %\draw [color = nodecolor,rotate around={0.:(0.,0.)}, dashed, fill = nodecolor,fill opacity=0.05] (0,0) ellipse (2cm and .865cm);
+  \draw [white, rotate around={0.:(0.,0.)}, fill = nodecolor,fill opacity=0.05] (0,0) ellipse (2cm and .865cm);
+  \draw [color = nodecolor!50] (2,0) arc(0:180:2cm and .865cm);
+  \draw [color = nodecolor] (-2,0) arc(180:360:2cm and .865cm);
+  %% helper ellipses for theta angle
+  % \draw [color = nodecolor!10] (0.83,0) arc(0:360:.83cm and 2cm);
+  % \draw (.166,0) arc (0:360:0.166 and 0.4);
+  % \draw [color = edgecolor] (0.139,0.220) arc(33.3:90:.166 and .4);
+  % angles
+  \draw [shift={(0.049,0.076)}, edgecolor, fill, fill opacity=0.5] (-0.049,-0.076) -- (56.7:0.166) arc (32.5:90:.166 and .4) -- cycle;
+  % \draw [shift={(0,0)}, edgecolor, fill, fill opacity=0.5] (0,0) -- (56.7:0.4) arc (56.7:90.:0.4) -- cycle;
+  % \draw [shift={(-0.053,-0.335)}, edgecolor, fill, fill opacity=0.5] (0,0) -- (0:0.4) arc (0:360:.166 and 0.4) -- cycle;
+  % \draw [shift={(-0.234,0)}, edgecolor, fill, fill opacity=0.5] (0,0) -- (0:0.4) arc (0:360:.166 and 0.4) -- cycle;
+  % \draw [shift={(0,0)}, edgecolor, fill, fill opacity=0.5] (0,0) -- (-135.7:0.4) arc (-135.7:-33.2:0.4) -- cycle;
+  \draw [shift={(0,0)}, edgecolor, fill, fill opacity=0.5] (0,0) -- (-135.7:0.4) arc (-135.7:-26.3:0.4 and 0.173) -- cycle;
+  % angle labels
+  \draw (-0.21,-0.28) node[anchor=north west] {\textcolor{edgecolor}{$\varphi$}};
+  \draw (-0.04,0.83) node[anchor=north west] {\textcolor{edgecolor}{$\theta$}};
+  % outer circle
+  \draw [color = nodecolor] (0,0) circle (2cm);
+  %% marked states except special
+  % one and zero
+  \draw [nodecolor] (0,-2) circle (0.7pt);
+  \draw [nodecolor] (0,2) circle (0.7pt);
+  % plus i and minus i
+  \draw [nodecolor] (2.0,0) circle (0.7pt);
+  \draw [nodecolor] (-2.0,0) circle (0.7pt);
+  % plus and minus
+  \draw [nodecolor] (-0.81,-0.79) circle (0.7pt);
+  \draw [nodecolor] (0.81,0.79) circle (0.7pt);
+  %state labels basis
+  \draw (-0.31,2.6) node[anchor=north west] {\textcolor{nodecolor}{$|0\rangle$}};
+  \draw (-0.31,-2) node[anchor=north west] {\textcolor{nodecolor}{$|1\rangle$}};
+  \draw (-1.17,-0.8) node[anchor=north west] {\textcolor{nodecolor}{$|+\rangle$}};
+  \draw (0.635,0.72) node[anchor=north west] {\textcolor{nodecolor}{$|-\rangle$}};
+  \draw (2.0,0.332) node[anchor=north west] {\textcolor{nodecolor}{$\frac{1}{\sqrt{2}}\left(|0\rangle+i|1\rangle\right)$}};
+  \draw (-4.42,0.332) node[anchor=north west] {\textcolor{nodecolor}{$\frac{1}{\sqrt{2}}\left(|0\rangle-i|1\rangle\right)$}};
+  % state label special
+  \draw (0.4,1.65) node[anchor=north west] {\textcolor{nodecolor}{$|\psi\rangle$}};
+  % special marked state
+  \draw [nodecolor] (0.7,1.07) circle (0.7pt);
+  % arrows
+  \draw [edgecolor, -stealth](0,0) -- (0,2);
+  \draw [edgecolor, -stealth](0,0) -- (-0.81,-0.79);
+  \draw [edgecolor, -stealth](0,0) -- (2,0);
+  % arrow labels
+  \draw (-0.65,-0.42) node[edgecolor, anchor=north west] {$x$};
+  \draw (1.5,0.40) node[edgecolor, anchor=north west] {$y$};
+  \draw (-0.1,1.9) node[edgecolor, anchor=north west] {$z$};
+  % triangle
+  \coordinate (T1) at (0,0); 
+  \coordinate (T2) at (0.7,1.07); 
+  \coordinate (T3) at (0.7,-0.46); 
+  % \draw [color = nodecolor!50, densely dotted] (T1) -- (T2);
+  % \draw [color = nodecolor!50, densely dotted] (T2) -- (T3);
+  % \draw [color = nodecolor!50, densely dotted] (T1) -- (T3);
+  \path[draw, densely dotted, 
+  color = nodecolor!75, fill=nodecolor, fill opacity=0.1] (T1) node[left] {}
+  -- (T2) node[below] {}
+  -- (T3) node[below] {}
+  -- cycle;
+\end{tikzpicture}
+\end{document} 

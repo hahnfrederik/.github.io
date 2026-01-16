@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Impressum - Frederik Hahn</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+        :root {
+            --color-primary: #1D3D59;
+            --color-secondary: #518C27;
+            --color-lightest: #8FBF60;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Computer Modern Serif', Georgia, 'Times New Roman', serif;
+            background-color: var(--color-primary);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3em 2em;
+            flex: 1;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid var(--color-lightest);
+            padding-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+            color: var(--color-lightest);
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        a {
+            color: var(--color-lightest);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(143, 191, 96, 0.3);
+        }
+        a:hover {
+            border-bottom-color: var(--color-lightest);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2em;
+            padding: 0.5em 1em;
+            background-color: var(--color-secondary);
+            color: #ffffff;
+            border-radius: 2em;
+            border: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            background-color: #CF2363;
+        }
+        .email {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        footer {
+            background-color: var(--color-secondary);
+            padding: 1.5em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">&larr; Zurück zur Startseite</a>
+
+        <h1>Impressum</h1>
+
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>
+            Frederik Hahn<br>
+            Einsteinufer 17<br>
+            10587 Berlin<br>
+            Deutschland
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+            E-Mail: <span class="email">ed.nilreb-ut@nhah.kirederf</span>
+            <noscript><br>(Bitte die E-Mail-Adresse rückwärts lesen)</noscript>
+        </p>
+
+        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <p>
+            Frederik Hahn<br>
+            Einsteinufer 17<br>
+            10587 Berlin
+        </p>
+
+        <h2>Haftungsausschluss</h2>
+
+        <h3 style="font-size: 1.2em; margin-top: 1.5em; margin-bottom: 0.5em;">Haftung für Inhalte</h3>
+        <p>
+            Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen.
+        </p>
+
+        <h3 style="font-size: 1.2em; margin-top: 1.5em; margin-bottom: 0.5em;">Haftung für Links</h3>
+        <p>
+            Diese Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+        </p>
+
+        <h3 style="font-size: 1.2em; margin-top: 1.5em; margin-bottom: 0.5em;">Urheberrecht</h3>
+        <p>
+            Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+        </p>
+
+        <h2>Datenschutz</h2>
+        <p>
+            Diese Website verwendet keine Cookies, keine Analysedienste und sammelt keine personenbezogenen Daten. Es werden keine Daten an Dritte weitergegeben.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; Frederik Hahn <span id="year"></span></p>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+
+    <script>
+        // Reverse the email for display (spam protection)
+        document.querySelectorAll('.email').forEach(function(el) {
+            var text = el.textContent;
+            el.textContent = text.split('').reverse().join('');
+            el.style.direction = 'ltr';
+            el.style.unicodeBidi = 'normal';
+        });
+    </script>
+</body>
+</html>

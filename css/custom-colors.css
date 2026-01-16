@@ -1,0 +1,375 @@
+/* Custom Color Scheme Override
+ * Primary: #1D3D59 (Deep blue)
+ * Secondary: #518C27 (Forest green)
+ * Darkest: #022601 (Very dark green)
+ * Lightest: #8FBF60 (Light green)
+ * Highlight: #CF2363 (Magenta)
+ *
+ * Rules:
+ * - Sections alternate: Primary → Secondary → Primary → Secondary
+ * - Text white on colored backgrounds, theme color on white backgrounds
+ * - Buttons unified style (like Publications button)
+ * - Publication items: titles white, other text = button color
+ */
+
+:root {
+    --color-primary: #1D3D59;
+    --color-secondary: #518C27;
+    --color-darkest: #022601;
+    --color-lightest: #8FBF60;
+    --color-highlight: #CF2363;
+}
+
+/* ===== GLOBAL STYLES ===== */
+
+/* Default text white (will override for white backgrounds) */
+body, p, h1, h2, h3, h4, h5, h6, li, span, a, label, div {
+    color: #ffffff !important;
+}
+
+body {
+    background-color: var(--color-primary) !important;
+}
+
+/* ===== SECTION BACKGROUNDS - ALTERNATING PRIMARY/SECONDARY ===== */
+
+/* Section 1: Banner - PRIMARY */
+.style1.color5,
+.style1.color5.invert {
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+}
+
+/* Section 2: About - SECONDARY */
+.style1.color4 {
+    background-color: var(--color-secondary) !important;
+    color: #ffffff !important;
+}
+
+/* Section 3: Research - PRIMARY */
+.style1.color1,
+.style1.color1.invert {
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+}
+
+/* Section 4: Publications - SECONDARY */
+.wrapper.style1.align-center {
+    background-color: var(--color-secondary) !important;
+    color: #ffffff !important;
+}
+
+.style1.medium {
+    background-color: var(--color-secondary) !important;
+    color: #ffffff !important;
+}
+
+/* Publications items container */
+.items {
+    background-color: transparent !important;
+}
+
+/* Publication items styling */
+.items article {
+    color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    border-width: 2px !important;
+}
+
+/* Publication titles - WHITE */
+.items article h3 {
+    color: #ffffff !important;
+}
+
+/* Publication content (authors, venue) - PRIMARY color (button color in secondary section) */
+.items article p,
+.items article p strong,
+.items article span {
+    color: var(--color-primary) !important;
+}
+
+/* Publication icons - PRIMARY color */
+.items article .icon {
+    color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    border-width: 2px !important;
+}
+
+/* Thicker grid lines in publications */
+.items.style1 {
+    grid-gap: 3em !important;
+}
+
+/* Section 5: Contact - PRIMARY */
+.style2.invert {
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+}
+
+/* Section 6: Footer - SECONDARY */
+footer.style2,
+footer.wrapper.style2 {
+    background-color: var(--color-secondary) !important;
+    color: #ffffff !important;
+}
+
+/* Bottom box - use complementary color */
+footer .inner,
+footer > div {
+    background-color: transparent !important;
+}
+
+/* ===== UNIFIED BUTTON STYLES (Publications type) ===== */
+
+/* All buttons: no border, solid background, nicely rounded */
+button, .button, a.button {
+    border: none !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease !important;
+    padding: 0.75em 1.5em !important;
+    border-radius: 2em !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+/* Buttons in PRIMARY sections → SECONDARY background */
+.style1.color5 .button,
+.style1.color1 .button,
+.style2.invert .button,
+footer .button {
+    background-color: var(--color-secondary) !important;
+    color: #ffffff !important;
+}
+
+/* Buttons in SECONDARY sections → PRIMARY background */
+.style1.color4 .button,
+.style1.medium .button,
+.wrapper.style1.align-center .button,
+.items .button {
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+}
+
+/* All buttons on hover → HIGHLIGHT color */
+button:hover, .button:hover, a.button:hover {
+    background-color: var(--color-highlight) !important;
+    color: #ffffff !important;
+}
+
+/* Small buttons keep same style */
+.button.small {
+    padding: 0.5em 1em !important;
+    font-size: 0.9em !important;
+}
+
+/* Primary button class */
+.button.primary {
+    background-color: var(--color-primary) !important;
+    border: none !important;
+}
+
+.button.primary:hover {
+    background-color: var(--color-highlight) !important;
+}
+
+/* ===== ICON STYLES ===== */
+
+.icon.style1 {
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+
+.icon.style1:hover {
+    background-color: var(--color-highlight) !important;
+    border-color: var(--color-highlight) !important;
+    color: #ffffff !important;
+}
+
+/* ===== LINK STYLES ===== */
+
+/* Links white with subtle underline */
+a {
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+a:hover {
+    color: var(--color-lightest) !important;
+    border-bottom-color: var(--color-lightest) !important;
+}
+
+/* Links inside publication items - PRIMARY color */
+.items article a:not(.button) {
+    color: var(--color-primary) !important;
+    border-bottom-color: var(--color-primary) !important;
+}
+
+.items article a:not(.button):hover {
+    color: var(--color-highlight) !important;
+    border-bottom-color: var(--color-highlight) !important;
+}
+
+/* Button links no underline */
+a.button {
+    border-bottom: none !important;
+}
+
+/* ===== HEADINGS ===== */
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
+
+/* ===== FOOTER SPECIFIC ===== */
+
+footer p,
+footer a,
+footer span {
+    color: #ffffff !important;
+}
+
+footer a:hover {
+    color: var(--color-lightest) !important;
+}
+
+footer .icons .icon {
+    border-color: #ffffff !important;
+}
+
+/* ===== WHITE BACKGROUND OVERRIDES ===== */
+
+/* If any section has white background, use theme color for text */
+[style*="background-color: #fff"],
+[style*="background-color: white"],
+[style*="background: #fff"],
+[style*="background: white"],
+.bg-white {
+    color: var(--color-primary) !important;
+}
+
+.bg-white * {
+    color: var(--color-primary) !important;
+}
+
+.bg-white h1, .bg-white h2, .bg-white h3,
+.bg-white h4, .bg-white h5, .bg-white h6 {
+    color: var(--color-primary) !important;
+}
+
+/* ===== PUBLICATIONS LIST STYLES ===== */
+
+.publications-list {
+    max-width: 900px;
+    margin: 3em auto;
+    text-align: left;
+}
+
+.publication-item {
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.publication-item:last-child {
+    border-bottom: none;
+}
+
+/* Publication title - WHITE and prominent */
+.publication-item h3 {
+    color: #ffffff !important;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Authors - PRIMARY color (same as button color in secondary section) */
+.publication-item .authors {
+    color: var(--color-primary) !important;
+    margin: 0.5em 0;
+    font-size: 1em;
+}
+
+.publication-item .authors strong {
+    color: var(--color-primary) !important;
+}
+
+/* Venue - PRIMARY color */
+.publication-item .venue {
+    color: var(--color-primary) !important;
+    margin: 0.5em 0;
+    font-style: italic;
+}
+
+/* Publication links */
+.publication-links {
+    margin-top: 1em;
+    display: flex;
+    gap: 0.75em;
+    flex-wrap: wrap;
+}
+
+.publication-links .button {
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+    padding: 0.5em 1.25em !important;
+    font-size: 0.9em !important;
+}
+
+.publication-links .button:hover {
+    background-color: var(--color-highlight) !important;
+}
+
+/* ===== ACCESSIBILITY - FOCUS STATES ===== */
+
+/* Visible focus outline for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--color-lightest) !important;
+    outline-offset: 2px !important;
+}
+
+/* Focus states for buttons */
+button:focus-visible,
+.button:focus-visible,
+a.button:focus-visible {
+    background-color: var(--color-highlight) !important;
+    outline: 3px solid var(--color-lightest) !important;
+    outline-offset: 2px !important;
+}
+
+/* Focus states for icons */
+.icon:focus-visible {
+    outline: 3px solid var(--color-lightest) !important;
+    outline-offset: 2px !important;
+    background-color: var(--color-highlight) !important;
+    border-color: var(--color-highlight) !important;
+}
+
+/* Skip to content link */
+.skip-to-content {
+    position: absolute !important;
+    top: -100px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+    padding: 1em 2em !important;
+    z-index: 10000 !important;
+    border-radius: 0 0 0.5em 0.5em !important;
+    text-decoration: none !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+.skip-to-content:focus {
+    top: 0 !important;
+    outline: 3px solid var(--color-lightest) !important;
+}
