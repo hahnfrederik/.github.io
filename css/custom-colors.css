@@ -190,31 +190,26 @@ button:hover, .button:hover, a.button:hover {
 
 /* ===== LINK STYLES ===== */
 
-/* Links white with subtle underline */
+/* Links: no underline at all (theme uses text-decoration; custom CSS used to
+   stack a border-bottom on top, producing a double underline). Color shifts
+   on hover give the only visual cue. */
 a {
     color: #ffffff !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 a:hover {
     color: var(--color-lightest) !important;
-    border-bottom-color: var(--color-lightest) !important;
 }
 
 /* Links inside publication items - PRIMARY color */
 .items article a:not(.button) {
     color: var(--color-primary) !important;
-    border-bottom-color: var(--color-primary) !important;
 }
 
 .items article a:not(.button):hover {
     color: var(--color-highlight) !important;
-    border-bottom-color: var(--color-highlight) !important;
-}
-
-/* Button links no underline */
-a.button {
-    border-bottom: none !important;
 }
 
 /* ===== HEADINGS ===== */
